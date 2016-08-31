@@ -1,0 +1,135 @@
+    <h1>{{titles}}</h1>  
+    <h2>Contractor Information</h2>   
+    <div id="contractorDetail">
+      <h4>Personal Information</h4> 
+      <a ng-show="changesIndicator" href="" ng-click="open()">Recent Changes</a>      
+    </div>
+      <table border="1">
+        <tr>
+          <th>Contractor Id</th>
+          <td ng-show="!editData">{{cont.id}}</td>
+          <td ng-show="editData"><input type="text" ng-model="cont1.id"></td>
+        </tr>        
+        <tr>
+          <th>Contractor Name</th>
+          <td ng-show="!editData">{{cont.fName}} {{cont.lName}}</td>
+          <td ng-show="editData"><input type="text" ng-model="cont1.fName"></td>
+          <td ng-show="editData"><input type="text" ng-model="cont1.lName"></td>
+        </tr>       
+         <tr>
+          <th>Gender</th>
+          <td ng-show="!editData">{{cont.sex}}</td>
+          <td ng-show="editData"><input type="text" ng-model="cont1.sex"></td>
+        </tr>       
+         <tr>
+          <th>Date Of Birth</th>
+           <td ng-show="!editData">{{cont.dob.substr(5,2)}}/{{cont.dob.substr(8,2)}}/{{cont.dob.substr(0,4)}}</td>
+           <td ng-show="editData"><input type="date" ng-model="cont1.dob"></td>
+         </tr>
+          <tr>
+            <th>Email ID</th>
+            <td ng-show="!editData">{{cont.email}}</td> 
+            <td ng-show="editData"><input type="email" ng-model="cont1.email"></td>
+          </tr>
+          <tr>
+            <th>Status</th>
+            <td ng-show="!editData">{{cont.contractStatus}}</td>
+            <td ng-show="editData"><input type="text" ng-model="cont1.contractStatus"></td>
+          </tr>            
+      </table>
+
+      <h4>Work Information</h4>
+      <table border="1">
+        <tr>
+          <th>Project</th>
+          <td ng-show="!editData">{{cont.project}}</td>
+          <td ng-show="editData"><input type="text" ng-model="cont1.project"></td>
+        </tr>        
+        <tr>
+          <th>Client</th>
+          <td ng-show="!editData">{{cont.client}}</td>
+          <td ng-show="editData"><input type="text" ng-model="cont1.client"></td>
+        </tr>       
+        <tr>
+          <th>Start Date</th>
+          <td ng-show="!editData">{{cont.sDate.substr(5,2)}}/{{cont.sDate.substr(8,2)}}/{{cont.sDate.substr(0,4)}}</td>
+          <td ng-show="editData"><input type="date" ng-model="cont1.sDate"></td>
+        </tr>       
+        <tr>
+          <th>End Date</th>
+          <td ng-show="!editData" ng-show="contract">{{cont.eDate.substr(5,2)}}/{{cont.eDate.substr(8,2)}}/{{cont.eDate.substr(0,4)}}</td>
+          <td ng-show="editData"><input type="date" ng-model="cont1.eDate"></td>
+        </tr>
+        <tr>
+          <th>Official Email</th>
+          <td ng-show="!editData">{{cont.workEmail}}</td>
+          <td ng-show="editData"><input type="email" ng-model="cont1.workEmail"></td>
+        </tr>
+        <tr>
+          <th>Staff Type</th>
+          <td ng-show="!editData">{{cont.staffType}}</td>
+          <td ng-show="editData"><input type="text" ng-model="cont1.staffType"></td>
+        </tr>
+        <tr>
+          <th>Vendor</th>
+          <td ng-show="!editData">{{cont.vendor}}</td>
+          <td ng-show="editData"><input type="text" ng-model="cont1.vendor"></td>
+        </tr>   
+        <tr>
+          <th>Time Card</th>
+          <td ng-show="!editData">{{cont.timeCard}}</td>
+          <td ng-show="editData"><input type="text" ng-model="cont1.timeCard"></td>
+        </tr>
+        <tr>
+          <th>Rate</th>
+          <td ng-show="!editData" ng-show="rate">{{cont.rate}} $/hr</td>
+          <td ng-show="editData"><input type="number" ng-model="cont1.rate">$/hr</td>
+        </tr>         
+        <tr>
+          <th>Project manager</th>
+          <td ng-show="!editData">{{cont.manager}}</td>
+          <td ng-show="editData"><input type="text" ng-model="cont1.manager"></td>
+        </tr>         
+        <tr>
+          <th>Project Manager's Email</th>
+          <td ng-show="!editData">{{cont.managerEmail}}</td>
+          <td ng-show="editData"><input type="email" ng-model="cont1.managerEmail"></td>
+        </tr>         
+        <tr>
+          <th>Employee Handbook Status</th>
+          <td ng-show="!editData">{{cont.handbook}}</td>
+          <td ng-show="editData"><input type="text" ng-model="cont1.handbook"></td>
+        </tr>   
+        <tr>
+          <th>Employee Contract Status</th>
+          <td ng-show="!editData">{{cont.contractStatus}}</td>
+          <td ng-show="editData"><input type="text" ng-model="cont1.contractStatus"></td>
+        </tr>
+        <tr>
+          <th>Vendor Contact Number</th>
+          <td ng-show="!editData">{{cont.vendNum}}</td> 
+          <td ng-show="editData"><input type="text" ng-model="cont1.vendNum"></td>
+        </tr>
+        <tr>
+          <th>Vendor Email</th>
+          <td ng-show="!editData">{{cont.vendEmail}}</td>
+          <td ng-show="editData"><input type="email" ng-model="cont1.vendEmail"></td>
+        </tr>    
+      </table><br>
+    </div>
+      <div modal="showModal" close="cancel()">
+        <div class="modal-header">
+          <h4 class="modal-title">Recent changes</h4>
+        </div>
+        <div class="modal-body">
+          <p>Hi there!</p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-success" ng-click="ok()">Okay</button>           
+        </div>
+      </div>
+    <button ng-show="editData" class="btn btn-success"><a href="/enroll" ng-click="update(cont1._id)">Submit</a></button>
+    <button ng-show="editData" class="btn btn-danger"><a href="/list">Cancel</a></button>
+    <button ng-show="!editData" class="btn btn-warning"><a href="" ng-click="edit(cont._id)">Edit</a></button>
+    <button ng-show="!editData" class="btn btn-success"><a href="/hire">Hire New</a></button>
+    <button ng-show="!editData" class="btn btn-danger"><a href="/list">List</a></button>
