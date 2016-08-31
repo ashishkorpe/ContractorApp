@@ -10,7 +10,6 @@ app.use(bodyParser.json());
 
 app.get('/',function(req,res){
 	console.log("this is Index page");
-	// res.json("this is Index page");
 });
 
 app.get('/cont',function(req,res){
@@ -52,12 +51,6 @@ app.get('/users',function(req,res){
 
 app.put('/cont/:id',function(req,res){
 	var id = req.params.id;
-	// console.log(req.body.name);	
-	// for(var key=0; key < req.body; key++){
-	// 		// var fName = req.body.fName;
-	// 		// console.log("fName: "+fName);
-	// 	console.log("key in req.body : "+ req.body[key]);
-	// }
 	db.cont.findAndModify({query:{_id:mongojs.ObjectId(id)},		
 		update:{$set:{fName:req.body.fName,
 					  lName:req.body.lName,
