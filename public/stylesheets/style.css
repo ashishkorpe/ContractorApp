@@ -1,0 +1,22 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+table, thead, tbody {
+	border-spacing: 5rem;
+	padding: 3rem;
+	width:65%;
+}
+
+ #contr_Id{
+ 	text-align:center;
+ }
+
+ button{
+ 	text-decoration-color: white;
+ }

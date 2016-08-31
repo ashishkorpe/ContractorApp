@@ -1,0 +1,33 @@
+<h3>Personal Information</h3>
+	<table>
+		<tr>
+			<th>Contractor ID:</th>
+			<td><input type="text" name="contractorId" ng-model="contractor.id"></td>
+		</tr>		
+		<tr><th>First Name:</th>
+			<td><input type="text" ng-model="contractor.fName"></td>			
+		</tr>
+		<tr>
+			<th>Last Name:</th>
+			<td><input type="text" ng-model="contractor.lName"></td>
+		</tr>
+		<tr>
+			<th>Personal email:</th>
+			<td><input type="email" ng-model="contractor.email"></td> 
+		</tr>
+		<tr>
+			<th>Gender:</th>
+			<td><input type="text" ng-model="contractor.sex"></td>
+		</tr>
+		<tr>
+			<th>Date Of Birth:</th>
+			<td><input type="date" ng-model="contractor.dob"></td>
+		</tr>
+		<tr>
+			<th>Contact Number:</th>
+			<td><input type="tel" ng-model="contractor.tel"></td>
+		</tr>
+	</table>
+	<br>
+	<button  class="btn btn-info" ng-click="gotData($scope.contractor)"><a href="/next">Next</a></button>
+	<button class="btn btn-danger"><a href="/main">Cancel</a></button>

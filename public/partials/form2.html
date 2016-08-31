@@ -1,0 +1,90 @@
+<h3>Work Information</h3>
+<table>	
+	<tr>
+		<th>Email Id:</th>
+		<td><input type="email" ng-model="contractor.workEmail" placeholder="Contractor's workEmail"></td>
+	</tr>
+	<tr>
+		<th>Project:</th>
+		<td><input type="text" name="project" ng-model="contractor.project"></td>
+	</tr>
+	<tr>
+		<th>Client:</th>
+		<td><input type="text" ng-model="contractor.client"></td>
+	</tr>
+	<tr>
+		<th>Start Date:</th>
+		<td><input type="date" ng-model="contractor.sDate"></td>
+	</tr>
+	<tr>
+		<th>End date: </th>
+		<td><input type="date" ng-model="contractor.eDate"></td>
+	</tr>
+	<tr>
+		<th>Labor Category: </th>
+		<td><input type="text" ng-model="contractor.labor"></td>
+	</tr>
+	<tr>
+		<th>Staff Type:</th>
+		<td>
+			<select name="staff_type" id="" ng-model="contractor.staffType">
+				<option value=""></option>
+				<option value="SubK">SubK</option>
+				<option value="1099">1099</option>
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<th>Vendor:</th>
+		<td><input type="text" ng-model="contractor.vendor"></td>
+	</tr>
+	<tr>
+		<th>Time card:</th>
+		<td>
+			<input type="radio" name="timeCard" value="yes" ng-model="contractor.timeCard">Yes
+			<input type="radio" name="timeCard" value="no" ng-model="contractor.timeCard">No
+		</td>
+	</tr>
+	<tr>
+		<th>Project Manager:</th>
+		<td><input type="text" ng-model="contractor.manager"></td>
+	</tr>
+	<tr>
+		<th>Project Manager's email: </th>
+		<td><input type="email" ng-model="contractor.managerEmail"></td>
+	</tr>
+	<tr>
+		<th>Employee Handbook Status:</th>
+		<td>
+			<select name="employeeHandbook" ng-model="contractor.handbook">
+				<option value="yes">Yes</option>
+				<option value="no">No</option>
+				<option value="pending">Pending</option>
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<th>Contract Status:</th>
+		<td>
+			<select name="contract_status" ng-model="contractor.contractStatus">
+				<option value=""></option>
+				<option value="Active">Active</option>
+				<option value="Terminated">Terminated</option>
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<th>Rate</th>
+		<td><input type="number" ng-model="contractor.rate">$/hr</td>
+	</tr>
+	<tr>
+		<th>Vendor Contact number</th>
+		<td><input type="tel" ng-model="contractor.vendNum"></td>
+	</tr>	
+	<tr>
+		<th>Vendor Email</th>
+		<td><input type="email" ng-model="contractor.vendEmail"></td>
+	</tr>
+</table>
+<button class="btn btn-info"><a href="" ng-click="enroll(contractor)">Submit</a></button>
+<button class="btn btn-danger"><a href="/main">Cancel</a></button>
