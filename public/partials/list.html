@@ -1,0 +1,33 @@
+<style>
+	#searchbox{
+		float:right;
+		margin:0 0 10px,10px;
+	}
+</style>
+
+				<div id="searchbox">
+					<strong>{{activeCont}}</strong> Active Contractors<br><br>
+					Search:<input type="text" ng-model="search.fName" placeholder="search contractors">
+				</div><br>
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Id</th>
+							<th>Name</th>
+							<th>Title</th>
+							<th>Start Date</th>
+							<th>Status</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="contact in contactlist | filter:search.fName | orderBy:'id'">
+							<td>{{contact.id}}</td>
+							<td><a href="/detail/{{contact.id}}">{{contact.fName}} {{contact.lName}}</a></td>
+							<td>{{contact.labor}}</td>
+							<td>{{contact.sDate.substr(5,2)}}/{{contact.sDate.substr(8,2)}}/{{contact.sDate.substr(0,4)}}</td>
+							<td>{{contact.contractStatus}}</td>
+						</tr>
+					</tbody>
+				</table>
+				<button class="btn btn-info"><a href="/main">Home</a></button>
+				<button class="btn btn-success" ng-csv="getArray" csv-header="getHeader()" ng-click="clickFn()" filename="Softrams_Contractors_data.csv">Get Backup</button>
